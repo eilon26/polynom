@@ -1,5 +1,5 @@
 import static org.junit.jupiter.api.Assertions.*;
-//test1
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -86,10 +86,10 @@ Monom m2;
 		assertEquals("21.0*X^6-28.0*X^8+35.0*X^10+3.0*X^11-4.0*X^13+5.0*X^15",b1.toString());
 	}
 
-	@Test
-	void testEqualsPolynom_able() {
-		fail("Not yet implemented");
-	}
+//	@Test
+//	void testEqualsPolynom_able() {
+//		fail("Not yet implemented");
+//	}
 
 //	@Test
 //	void testIsZero() {
