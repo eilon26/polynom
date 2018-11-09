@@ -7,6 +7,7 @@ import java.util.Iterator;
  * where: a_1, a_2 ... a_n are real numbers and b_1<b_2..<b_n >=0 are none negative integers (naturals)
  * For formal definitions see: https://en.wikipedia.org/wiki/Polynomial
  * 
+ * 
  * Such polygon has the following functionality:
  * 1. Init:
  * 1.1 Init(String)
@@ -27,7 +28,6 @@ import java.util.Iterator;
  *													//	(i) x0<=x2<=x2 & (ii) {f(x2)<eps
  * 3.6 String toString() // returns a String such that it can be used for init an equal(s) Polygon
  *													
- * 
  * 
  * 
  * @author ben-moshe
