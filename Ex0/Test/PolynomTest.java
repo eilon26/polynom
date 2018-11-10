@@ -8,7 +8,7 @@ import org.junit.jupiter.api.Test;
 
 import myMath.Monom;
 import myMath.Polynom;
-//test 2
+
 class PolynomTest {
 Monom m1;
 Monom m2;

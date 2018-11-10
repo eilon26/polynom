@@ -199,6 +199,12 @@ public class Polynom implements Polynom_able{
 	 */
 	@Override
 	public double root(double x0, double x1, double eps){
+		if (eps<=0)
+			try {
+				throw new Exception("eps suppose to be bigger then 0");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		double middle;
 		if (Math.abs(this.f(x0)) < eps)
 			return x0;
@@ -247,6 +253,12 @@ public class Polynom implements Polynom_able{
 	 */
 	@Override
 	public double area(double x0, double x1, double eps) {
+		if (eps<=0)
+			try {
+				throw new Exception("eps suppose to be bigger then 0");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		if (x0>x1) {
 			double temp=x0;
 			x0=x1;
