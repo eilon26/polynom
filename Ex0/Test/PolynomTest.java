@@ -86,44 +86,62 @@ Monom m2;
 		assertEquals("21.0*X^6-28.0*X^8+35.0*X^10+3.0*X^11-4.0*X^13+5.0*X^15",b1.toString());
 	}
 
-//	@Test
-//	void testEqualsPolynom_able() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	void testEqualsPolynom_able() throws Exception {
+		Polynom b4 = new Polynom("7*x^4+1*x^9");
+		Polynom b1 = new Polynom("5*x^6+3*x^2-4*x^4");
+	    assertFalse(b4.equals(b1));
+	    Polynom b2 = new Polynom("7*x^4+1*x^9");
+	    assertTrue(b4.equals(b2));
+	    
+	}
 
-//	@Test
-//	void testIsZero() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testRoot() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testCopy() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testDerivative() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testArea() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testIteretor() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testToString() {
-//		fail("Not yet implemented");
-//	}
+	@Test
+	void testIsZero() throws Exception {
+		Polynom b2 = new Polynom("7*x^4+1*x^9");
+	    assertFalse(b2.isZero());
+	    b2 = new Polynom();
+	    assertTrue(b2.isZero());
+	}
+
+	@Test
+	void testRoot() throws Exception {
+		Polynom p1 = new Polynom("-1*x^3+1*x^1-2*x^0");
+		double round =  (double)((int)(p1.root(-30, 50, 0.0001)/0.001))/1000;
+		assertEquals(-1.521,round);
+	}
+
+	@Test
+	void testCopy() throws Exception {
+		Polynom b2 = new Polynom("7*x^4+1*x^9");
+	    Polynom b3=(Polynom)b2.copy();
+	    assertEquals(b2.toString(),b3.toString());
+		Polynom b1 = new Polynom("5*x^6+3*x^2-4*x^4");
+	    b3 = (Polynom)b1.copy();
+	    assertEquals(b1.toString(),b3.toString());
+
+	}
+
+	@Test
+	void testDerivative() throws Exception {
+		Polynom o = new Polynom("-5*x^2+5*x^1+3*x^2-6*x^7");
+        assertEquals("5.0*X^0-4.0*X^1-42.0*X^6",((Polynom)(o.derivative())).toString());
+		o = new Polynom("3*x^0");
+		assertEquals("0*X^0",((Polynom)(o.derivative())).toString());
+	}
+
+	@Test
+	void testArea() throws Exception {
+		Polynom p1 = new Polynom("5*x^6+3*x^2-4*x^4");
+		double round = (double)((int)(p1.area(0, 2, 0.000001)*1000))/1000;
+		assertEquals(73.828, round);
+		
+		p1 = new Polynom("1*x^3-2*x^1+1*x^0");
+		
+		round = (double)((int)(p1.area(-2, 2, 0.000001)*1000))/1000;
+		System.out.println(p1.area(-2, 2, 0.000001));
+		assertEquals(4.545, round);
+	}
+
 
 }

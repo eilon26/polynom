@@ -136,7 +136,7 @@ public class Test {
 		System.out.println();
 		
 		p1 = new Polynom("1*x^3-2*x^1+1*x^0");
-		System.out.println("the area of this polynom "+p1+" between -2 to 2 is 4.5225");
+		System.out.println("the area of this polynom "+p1+" between -2 to 2  (above axis x)is 4.54508 ");
 		System.out.println("so if eps value is 0.000001 so we suppose to get approximately the same: ");
 		System.out.println(p1.area(-2, 2, 0.000001));
 		System.out.println();

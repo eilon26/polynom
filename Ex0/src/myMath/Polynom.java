@@ -288,7 +288,7 @@ public class Polynom implements Polynom_able{
     public String toString() {
     	String s = "";
 	    Iterator<Monom> it = this.iteretor();
-	    if (this.isZero()) return "0*x^0";
+	    if (this.isZero()) return "0*X^0";
 	    while (it.hasNext()) {
 	        Monom currMonom = it.next();
 	    	if (currMonom.get_coefficient()<0)
