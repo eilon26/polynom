@@ -4,6 +4,8 @@ public class Test {
 	@SuppressWarnings("resource")
 	public static void main(String[] args) throws Exception {
 		
+		
+		
 		//****************** Monom class *****************
 		System.out.println("****************** Monom class  *****************");
 		//****************** constructions *****************
