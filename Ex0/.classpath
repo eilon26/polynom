@@ -10,5 +10,10 @@
 	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/gral-core-0.11-sources.jar"/>
 	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/jar_files/VectorGraphics2D-0.11.jar"/>
 	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/jar_files/xchart-3.5.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/xchart-3.5.2.zip"/>
+	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/XChart-develop.zip"/>
+	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/VectorGraphics2D-0.13.jar"/>
+	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/xchart-3.5.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/EILON/Downloads/xchart-demo-3.5.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
