@@ -10,22 +10,6 @@ import myMath.Monom;
 
 class MonomTest {
 
-//	@BeforeAll
-//	static void setUpBeforeClass() throws Exception {
-//	}
-
-//	@AfterAll
-//	static void tearDownAfterClass() throws Exception {
-//	}
-//
-//	@BeforeEach
-//	void setUp() throws Exception {
-//	}
-//
-//	@AfterEach
-//	void tearDown() throws Exception {
-//	}
-
 	@Test
 	void testMonomMonom() throws Exception {
 		Monom m1 = new Monom(5,8);
@@ -82,21 +66,17 @@ class MonomTest {
 	   
 	}
 
-//	@Test
-//	void testGet_power() {
-//		
-//	}
+	@Test
+	void testGet_power() throws Exception {
+		  Monom m1 = new Monom(3,4);
+		  assertEquals(4,m1.get_power());			  	  
+		  
+}
 
-//	@Test
-//	void testGet_coefficient() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testSet_coefficient() {
-//		fail("Not yet implemented");
-//	}
-//
-
+	@Test
+	void testGet_coefficient() throws Exception {
+	  Monom m1 = new Monom(3,3);
+	  assertEquals(3,m1.get_coefficient());	
+}
 
 }
