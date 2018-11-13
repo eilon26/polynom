@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import myMath.Monom;
 /**
  * 
  * This class represents a Polynom with add, multiply functionality, it also should support the following:
@@ -225,6 +224,7 @@ public class Polynom implements Polynom_able{
 	 * create a deep copy of this Polynum
 	 * @return Polynom that it is deep copy of this Polynum
 	 */
+	
 	@Override
 	public Polynom_able copy() {
 		Polynom_able copy = new Polynom(this);
