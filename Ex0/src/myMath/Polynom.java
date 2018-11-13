@@ -2,15 +2,7 @@ package myMath;
 import java.util.Collections;
 import java.util.ArrayList;
 import java.util.Iterator;
-//all of those class imported from xchart project https://github.com/knowm/XChart.git
-import java.awt.Graphics2D;
-import java.util.ArrayList;
-import org.knowm.xchart.QuickChart;
-import org.knowm.xchart.SwingWrapper;
-import org.knowm.xchart.XYChart;
-import org.knowm.xchart.XYChartBuilder;
-import org.knowm.xchart.XYSeries;
-import myMath.Monom;
+
 /**
  * 
  * This class represents a Polynom with add, multiply functionality, it also should support the following:
@@ -307,7 +299,7 @@ public class Polynom implements Polynom_able{
 	    if (s.charAt(0)=='+') return s.substring(1);
 	    else return s;
     }
-    
+
 	//****************** Private Methods and Data *****************
 	private ArrayList<Monom> p; 
 	

@@ -58,14 +58,7 @@ public class Plot1 {
 		}
 		
 	}
-
-
-
-	
-    
-
-
-    
+   
     // Show it
     new SwingWrapper(chart).displayChart();
 
