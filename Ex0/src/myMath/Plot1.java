@@ -1,12 +1,11 @@
 package myMath;
 
-import java.awt.Graphics2D;
-import java.util.ArrayList;
-
+//import java.awt.Graphics2D;
+//import java.util.ArrayList;
 import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
-import org.knowm.xchart.XYChartBuilder;
+//import org.knowm.xchart.XYChartBuilder;
 import org.knowm.xchart.XYSeries;
 
 /**
@@ -59,14 +58,7 @@ public class Plot1 {
 		}
 		
 	}
-
-
-
-	
-    
-
-
-    
+   
     // Show it
     new SwingWrapper(chart).displayChart();
 
