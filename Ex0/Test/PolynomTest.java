@@ -18,13 +18,13 @@ Monom m2;
 @Test
 void testPolynomPolynom() throws Exception {
     Polynom b1 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
-	 assertEquals("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0",b1.toString());
+	 assertEquals("5.4*X^1-2.0*X^2-6.0*X^7",b1.toString());
 	 Polynom b2 = new Polynom("");
-	 assertEquals("0",b2.toString());
+	 assertEquals("0*X^0",b2.toString());
 	 b2 = new Polynom();
-	 assertEquals("0",b2.toString());
+	 assertEquals("0*X^0",b2.toString());
 	 Polynom b3 = new Polynom(b1);
-	 assertEquals("-5*x;^2+5.4*x^1+3*x^2-6*x^7+0*x^0",b3.toString());
+	 assertEquals("5.4*X^1-2.0*X^2-6.0*X^7",b3.toString());
 
 }
 
@@ -34,8 +34,9 @@ void testF() throws Exception {
     Polynom b3 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
 	assertEquals(-98314.4, b3.f(4));
 	assertEquals(0, b3.f(0));
-	assertEquals(-34.2, b3.f(-3));
-	assertEquals(-26, b3.f(5.2));
+	assertEquals(13087.8, b3.f(-3));
+	double round = (double)((int)(b3.f(5.2)/0.001))/1000;
+	assertEquals(-616869.021,round);
 
 	
 }
