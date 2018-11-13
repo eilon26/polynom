@@ -12,31 +12,34 @@ import myMath.Polynom;
 class PolynomTest {
 Monom m1;
 Monom m2;
-//	@BeforeAll
-//	static void setUpBeforeClass() throws Exception {
-//	}
 
-//	@AfterAll
-//	static void tearDownAfterClass() throws Exception {
-//	}
-//
-//	@BeforeEach
-//	void setUp() throws Exception {
-//	}
-//
-//	@AfterEach
-//	void tearDown() throws Exception {
-//	}
 
-//	@Test
-//	void testPolynomPolynom() {
-//		fail("Not yet implemented");
-//	}
-//
-//	@Test
-//	void testF() {
-//		fail("Not yet implemented");
-//	}
+
+@Test
+void testPolynomPolynom() throws Exception {
+    Polynom b1 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
+	 assertEquals("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0",b1.toString());
+	 Polynom b2 = new Polynom("");
+	 assertEquals("0",b2.toString());
+	 b2 = new Polynom();
+	 assertEquals("0",b2.toString());
+	 Polynom b3 = new Polynom(b1);
+	 assertEquals("-5*x;^2+5.4*x^1+3*x^2-6*x^7+0*x^0",b3.toString());
+
+}
+
+
+@Test
+void testF() throws Exception {
+    Polynom b3 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
+	assertEquals(-98314.4, b3.f(4));
+	assertEquals(0, b3.f(0));
+	assertEquals(-34.2, b3.f(-3));
+	assertEquals(-26, b3.f(5.2));
+
+	
+}
+
 
 	@Test
 	void testAddPolynom_able() throws Exception {
