@@ -2,7 +2,6 @@ package myMath;
 
 import java.awt.Graphics2D;
 import java.util.ArrayList;
-
 import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
