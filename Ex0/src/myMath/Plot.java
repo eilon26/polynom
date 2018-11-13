@@ -7,7 +7,9 @@ import java.util.Scanner;
 
 
 /**
- * Creates a simple Chart using QuickChart
+ * Creates a simple Chart of the polynom that the user in the range that the user enter.
+ * show the kitzon points
+ * calcult
  */
 public class Plot {
  
@@ -30,7 +32,7 @@ public class Plot {
 		yData[Index++] = pol.f(x);
 		
 	}
-	//calculate the erea betwen the graph and axis x
+	//calculate the area above the graph and beneath axis x
 	double rymanSum=0;
 	double eps = 0.01;
 	double x0=l;
@@ -40,10 +42,10 @@ public class Plot {
 		x0+=eps;
 	}
 	rymanSum = (double)((int)(rymanSum/0.001))/1000;
-	System.err.println("the erea above the graph and benith axis x is: "+rymanSum*-1);
+	System.err.println("the area above the graph and benith axis x is: "+rymanSum*-1);
 	// Create Chart
 	
-    XYChart chart = QuickChart.getChart("the erea above the graph and benith axis x is: "+rymanSum*-1, "X", "Y", "y(x)", xData, yData);
+    XYChart chart = QuickChart.getChart("the area above the graph and beneath axis x is: "+rymanSum*-1, "X", "Y", "y(x)", xData, yData);
 	
 	Polynom DevPol = (Polynom)(pol.derivative());
 	

@@ -17,7 +17,7 @@ Monom m2;
 
 @Test
 void testPolynomPolynom() throws Exception {
-    Polynom b1 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
+     Polynom b1 = new Polynom("-5*x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
 	 assertEquals("5.4*X^1-2.0*X^2-6.0*X^7",b1.toString());
 	 Polynom b2 = new Polynom("");
 	 assertEquals("0*X^0",b2.toString());
@@ -25,6 +25,33 @@ void testPolynomPolynom() throws Exception {
 	 assertEquals("0*X^0",b2.toString());
 	 Polynom b3 = new Polynom(b1);
 	 assertEquals("5.4*X^1-2.0*X^2-6.0*X^7",b3.toString());
+	 b1 = new Polynom("5.4*x^1+-3*x^2");
+	 assertEquals("5.4*X^1-3.0*X^2",b1.toString());
+	 try {
+		 b1 = new Polynom("5.4*x^1-++3*x^2");
+		 fail("not by the right pattern");
+	 }
+	 catch(Exception e) {
+	 }
+	 try {
+	    	b1 = new Polynom("-5x^2+5.4*x^1+3*x^2-6*x^7+0*x^0");
+	    	fail("not by the right pattern");
+	 }
+	 catch(Exception e) {   	
+	 }
+	 try {
+	    	b1 = new Polynom("-5*x");
+	    	fail("not by the right pattern");
+	 }
+	 catch(Exception e) {   	
+	 }
+	 try {
+	    	b1 = new Polynom("-5");
+	    	fail("not by the right pattern");
+	 }
+	 catch(Exception e) {   	
+	 }
+	 
 
 }
 
@@ -123,7 +150,6 @@ void testF() throws Exception {
 		Polynom b1 = new Polynom("5*x^6+3*x^2-4*x^4");
 	    b3 = (Polynom)b1.copy();
 	    assertEquals(b1.toString(),b3.toString());
-
 	}
 
 	@Test
@@ -143,7 +169,6 @@ void testF() throws Exception {
 		p1 = new Polynom("1*x^3-2*x^1+1*x^0");
 		
 		round = (double)((int)(p1.area(-2, 2, 0.000001)*1000))/1000;
-		System.out.println(p1.area(-2, 2, 0.000001));
 		assertEquals(4.545, round);
 	}
 

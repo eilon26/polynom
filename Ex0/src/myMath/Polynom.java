@@ -24,6 +24,7 @@ public class Polynom implements Polynom_able{
 	 * @param s the string  that represent polynom
 	 * @throws Exception when the string is not by the typical pattern we throw exception(a*x^b+...+a*x^b) when space between the letters is not allowed a is double and b is positive int. 
 	 * if there is monom without the signs '*' and '^' it is illegal. after the sign '^' it is illegal to put any sign except a number (not '+' or '-')
+	 * between the monoms "+-" or "-+" are allows but now more than that
 	 */
     public Polynom(String s) throws Exception {
     	p = new ArrayList<Monom>();

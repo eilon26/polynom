@@ -6,6 +6,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+
+
 import myMath.Monom;
 
 class MonomTest {
@@ -22,14 +24,20 @@ class MonomTest {
 		assertEquals("-2.0*X^3",m1.toString());
 		Monom m2 = new Monom(m1);
 		assertEquals("-2.0*X^3",m2.toString());
+		try {
+		m1= new Monom(4,-3);
+		fail("expected exceptin");
+		}
+		catch(Exception e){
+		}
 	}
+
 
 	@Test
 	void testF() throws Exception {
 		Monom m2 = new Monom(-2.2, 3);
-		double x = m2.f(-2.2);
-		String a = x + "";
-		assertEquals("23.42560000000001", a);
+		double round = (double)((int)(m2.f(-2.2)/0.001))/1000;;
+		assertEquals(23.425, round);
 		Monom m3 = new Monom(0, 3);
 		double y = m3.f(0);
 		String b = y + "";
@@ -54,6 +62,14 @@ class MonomTest {
 	    Monom m2= new Monom (-2,3);
 	    m1.add(m2);
 	    assertEquals("1.0*X^3",m1.toString());
+	    m2= new Monom (-2,4);
+	    try {
+	    	m2.add(m1);
+	    	fail("expected exceptin");
+	    }
+	    catch(Exception e) {
+	    	
+	    }
 	    
 	}
 
