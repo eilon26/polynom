@@ -16,11 +16,9 @@ public class Plot {
 	Scanner p = new Scanner(System.in);
     Polynom pol = new Polynom(p.nextLine());
     System.out.println("enter the left range in integer");
-    Scanner left = new Scanner(System.in);
-    int l = left.nextInt();
+    int l = p.nextInt();
     System.out.println("enter the right range in integer");
-    Scanner right = new Scanner(System.in);
-    int r = right.nextInt();
+    int r = p.nextInt();
     //calculate the graph points
     int Index=0;
     double[] xData = new double[1+((r-l)*10)];
