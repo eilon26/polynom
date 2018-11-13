@@ -21,7 +21,6 @@ public class Plot1 {
     double[] xData = new double[81];
     double[] yData = new double[81];
 
-    XYSeries[] ser = new XYSeries[81];
     
 	for (double x=-2 ;x<=6;x+=0.1) {
 		xData[Index] = x;
