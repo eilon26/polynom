@@ -21,27 +21,14 @@ public class Plot1 {
     int Index=0;
     double[] xData = new double[81];
     double[] yData = new double[81];
-    String[] label = new String[81];
+
+    XYSeries[] ser = new XYSeries[81];
+    
 	for (double x=-2 ;x<=6;x+=0.1) {
 		xData[Index] = x;
 		yData[Index++] = pol.f(x);
-		//label[Index++] = 1;
+		
 	}
-	
-	//calculate the kitzon points
-	Polynom DevPol = (Polynom)(pol.derivative());
-	String kitzon="kitzon point: ";
-	for (double x=-2 ;x<6;x+=1) {
-		if ((DevPol.f(x)*DevPol.f(x+1))<0) {
-			double XValueKitzon = DevPol.root(x, x+1, 0.00001);
-			double YValueKitzon = pol.f(XValueKitzon);
-			XValueKitzon = (double)((int)(XValueKitzon*1000))/1000;
-			YValueKitzon = (double)((int)(YValueKitzon*1000))/1000;
-			kitzon=kitzon+"("+XValueKitzon+","+YValueKitzon+"),  ";
-			
-		}
-	}
-	kitzon = kitzon.substring(0, kitzon.length()-3);
 	//calculate the erea betwen the graph and axis x
 	double rymanSum=0;
 	double eps = 0.01;
@@ -51,19 +38,37 @@ public class Plot1 {
 			rymanSum += pol.f(x0)*eps;
 		x0+=eps;
 	}
-	System.err.println("the sum between the graph and axis x is: "+rymanSum*-1);
+	rymanSum = (double)((int)(rymanSum/0.001))/1000;
+	System.err.println("the erea above the graph and benith axis x is: "+rymanSum*-1);
+	// Create Chart
 	
-    // Create Chart
-    XYChart chart = QuickChart.getChart(kitzon, "X", "Y", "y(x)", xData, yData);
-    //XYChart chart = new XYChartBuilder().build();
+    XYChart chart = QuickChart.getChart("the erea above the graph and benith axis x is: "+rymanSum*-1, "X", "Y", "y(x)", xData, yData);
+	
+	Polynom DevPol = (Polynom)(pol.derivative());
+	
+	Index=0;
+	for (double x=-2 ;x<6;x+=0.1) {
+		if ((DevPol.f(x)*DevPol.f(x+0.1))<0) {
+			double XValueKitzon = DevPol.root(x, x+0.1, 0.00001);
+			double YValueKitzon = pol.f(XValueKitzon);
+			XValueKitzon = (double)((int)(XValueKitzon*1000))/1000;
+			YValueKitzon = (double)((int)(YValueKitzon*1000))/1000;
+		    double[] KxData = {XValueKitzon};
+		    double[] KyData = {YValueKitzon};
+		    chart.addSeries("("+XValueKitzon+","+ YValueKitzon+")", KxData, KyData);
+		}
+		
+	}
+
+
+
+	
     
-    //XYSeries series = chart.addSeries("demo", xData, yData, label);
-   // XYSeries series = chart.addSeries("hjhj", xData, yData);
-   // series.setToolTips();
-   // chart.getStyler().setToolTipsEnabled(true);
+
+
     
     // Show it
     new SwingWrapper(chart).displayChart();
- 
+
   }
 }
