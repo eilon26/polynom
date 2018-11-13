@@ -3,6 +3,7 @@ package myMath;
 import org.knowm.xchart.QuickChart;
 import org.knowm.xchart.SwingWrapper;
 import org.knowm.xchart.XYChart;
+import java.util.Scanner;
 
 
 /**
@@ -11,15 +12,22 @@ import org.knowm.xchart.XYChart;
 public class Plot {
  
   public static void main(String[] args) throws Exception {
-    Polynom pol = new Polynom("0.2*x^4-1.5*x^3+3*x^2-1*x^1-5*x^0");
-    
+	System.out.println("enter the polynom");
+	Scanner p = new Scanner(System.in);
+    Polynom pol = new Polynom(p.nextLine());
+    System.out.println("enter the left range in integer");
+    Scanner left = new Scanner(System.in);
+    int l = left.nextInt();
+    System.out.println("enter the right range in integer");
+    Scanner right = new Scanner(System.in);
+    int r = right.nextInt();
     //calculate the graph points
     int Index=0;
-    double[] xData = new double[81];
-    double[] yData = new double[81];
+    double[] xData = new double[1+((r-l)*10)];
+    double[] yData = new double[1+((r-l)*10)];
 
     
-	for (double x=-2 ;x<=6;x+=0.1) {
+	for (double x=l ;x<=r;x+=0.1) {
 		xData[Index] = x;
 		yData[Index++] = pol.f(x);
 		
@@ -27,8 +35,8 @@ public class Plot {
 	//calculate the erea betwen the graph and axis x
 	double rymanSum=0;
 	double eps = 0.01;
-	double x0=-2;
-	while (x0<6) {
+	double x0=l;
+	while (x0<r) {
 		if ((pol.f(x0)*eps)<0)
 			rymanSum += pol.f(x0)*eps;
 		x0+=eps;
@@ -42,7 +50,7 @@ public class Plot {
 	Polynom DevPol = (Polynom)(pol.derivative());
 	
 	Index=0;
-	for (double x=-2 ;x<6;x+=0.1) {
+	for (double x=l ;x<r;x+=0.1) {
 		if ((DevPol.f(x)*DevPol.f(x+0.1))<0) {
 			double XValueKitzon = DevPol.root(x, x+0.1, 0.00001);
 			double YValueKitzon = pol.f(XValueKitzon);
