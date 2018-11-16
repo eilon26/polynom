@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 
 /**
- * Creates a simple Chart of the polynom that the user in the range that the user enter.
- * show the kitzon points
- * calcult
+ * Creates a simple Chart of the polynom that the user insert in the range that the user insert.
+ * show the kitzon points marked on the graph
+ * calcult the area above the graph and beneath axis x
  */
 public class Plot {
  
@@ -45,11 +45,11 @@ public class Plot {
 	System.err.println("the area above the graph and benith axis x is: "+rymanSum*-1);
 	// Create Chart
 	
-    XYChart chart = QuickChart.getChart("the area above the graph and beneath axis x is: "+rymanSum*-1, "X", "Y", "y(x)", xData, yData);
+        XYChart chart = QuickChart.getChart("the area above the graph and beneath axis x is: "+rymanSum*-1, "X", "Y", "y(x)", xData, yData);
 	
 	Polynom DevPol = (Polynom)(pol.derivative());
 	
-	Index=0;
+	
 	for (double x=l ;x<r;x+=0.1) {
 		if ((DevPol.f(x)*DevPol.f(x+0.1))<0) {
 			double XValueKitzon = DevPol.root(x, x+0.1, 0.00001);
