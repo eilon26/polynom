@@ -1,5 +1,5 @@
 # polynom  
-Information on the project:
+AInformation on the project:
 On this project the aim is to build an object that represent polynom.
 The class Polynom let the user to do some function on the Polynom object ("a*x^b+…+c*x^d") such as add, multiply, substract , Derivative, value at x, equals, iszero, toString, copy, find the root, find the area. 
 The class of Polynom implement the interface Polynom_able that inclue most of it functions except from value at x that the interface Polynom_able extend from the interface cont_function.
